@@ -9,6 +9,15 @@ import { Separator } from "@/components/ui/separator";
 import { Label } from "@/components/ui/label";
 import { Sun, Moon, BellRing, Bell, Globe, Mail } from "lucide-react";
 
+// Import these components for the settings page
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
 export default function SettingsPage() {
   const { theme, toggleTheme } = useTheme();
 
@@ -128,8 +137,8 @@ export default function SettingsPage() {
                         <Globe className="h-5 w-5" />
                         <Label htmlFor="language">Language</Label>
                       </div>
-                      <Select value="english" onValueChange={() => {}} className="w-[180px]">
-                        <SelectTrigger>
+                      <Select value="english" onValueChange={() => {}}>
+                        <SelectTrigger className="w-[180px]">
                           <SelectValue placeholder="Select language" />
                         </SelectTrigger>
                         <SelectContent>
@@ -170,12 +179,3 @@ export default function SettingsPage() {
     </DashboardLayout>
   );
 }
-
-// Import these components for the settings page
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";

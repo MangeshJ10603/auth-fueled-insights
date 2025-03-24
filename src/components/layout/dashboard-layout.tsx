@@ -1,4 +1,3 @@
-
 import { useState, useEffect, ReactNode } from "react";
 import { Header } from "@/components/layout/header";
 import { Sidebar } from "@/components/layout/sidebar";
@@ -23,34 +22,30 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
   }, [isDesktop]);
 
   const toggleSidebar = () => {
-    setIsSidebarOpen(prev => !prev);
+    setIsSidebarOpen((prev) => !prev);
   };
 
   return (
     <div className="flex h-screen w-full flex-col md:flex-row overflow-hidden">
-      <Sidebar 
-        isOpen={isSidebarOpen} 
-        toggleSidebar={toggleSidebar} 
-      />
-      
+      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+
       {/* Overlay for mobile */}
       {!isDesktop && isSidebarOpen && (
-        <div 
+        <div
           className="fixed inset-0 z-10 bg-black/50 backdrop-blur-sm md:hidden"
           onClick={toggleSidebar}
           aria-hidden="true"
         />
       )}
-      
+
       <div className="flex flex-1 flex-col overflow-hidden">
-        <Header 
-          toggleSidebar={toggleSidebar} 
-          isSidebarOpen={isSidebarOpen} 
-        />
-        <main className={cn(
-          "flex-1 overflow-auto p-4 md:p-6 transition-all duration-300",
-          isSidebarOpen ? "md:ml-0" : "md:ml-0"
-        )}>
+        <Header toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
+        <main
+          className={cn(
+            "flex-1 overflow-auto p-4 md:p-6 transition-all duration-300",
+            isSidebarOpen ? "md:ml-0" : "md:ml-0"
+          )}
+        >
           {children}
         </main>
       </div>

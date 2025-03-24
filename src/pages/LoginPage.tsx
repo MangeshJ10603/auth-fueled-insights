@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
@@ -27,7 +26,7 @@ export default function LoginPage() {
         </div>
 
         <LoginForm />
-        
+
         <p className="mt-8 text-center text-sm text-muted-foreground">
           Designed with precision & attention to detail
         </p>

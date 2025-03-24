@@ -1,9 +1,14 @@
-
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
-import { LayoutDashboard, Settings, User, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  LayoutDashboard,
+  Settings,
+  User,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -84,7 +89,12 @@ export function Sidebar({ isOpen, toggleSidebar, className }: SidebarProps) {
                 )
               }
             >
-              <item.icon className={cn("h-5 w-5 flex-shrink-0", !isOpen && "md:h-6 md:w-6")} />
+              <item.icon
+                className={cn(
+                  "h-5 w-5 flex-shrink-0",
+                  !isOpen && "md:h-6 md:w-6"
+                )}
+              />
               <span
                 className={cn(
                   "flex-1 text-sm transition-opacity",

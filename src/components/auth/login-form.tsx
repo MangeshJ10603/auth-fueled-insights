@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
@@ -122,9 +121,7 @@ export function LoginForm() {
               className="w-full h-11 rounded-lg text-base font-medium transition-all"
               disabled={isLoading}
             >
-              {isLoading ? (
-                <LoadingSpinner size="sm" className="mr-2" />
-              ) : null}
+              {isLoading ? <LoadingSpinner size="sm" className="mr-2" /> : null}
               {isLoading ? "Signing in..." : "Sign in"}
             </Button>
           </div>
@@ -134,7 +131,9 @@ export function LoginForm() {
       <div className="mt-6 text-center text-sm">
         <p className="text-muted-foreground mb-2">Test account credentials:</p>
         <div className="bg-muted py-2 px-3 rounded-md text-left">
-          <p className="text-xs text-muted-foreground">Email: user@example.com</p>
+          <p className="text-xs text-muted-foreground">
+            Email: user@example.com
+          </p>
           <p className="text-xs text-muted-foreground">Password: password</p>
         </div>
       </div>

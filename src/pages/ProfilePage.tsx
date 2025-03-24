@@ -1,8 +1,13 @@
-
 import { DashboardLayout } from "@/components/layout/dashboard-layout";
 import { useAuth } from "@/context/AuthContext";
 import { PageTransition } from "@/components/ui/page-transition";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 
@@ -18,13 +23,15 @@ export default function ProfilePage() {
       <PageTransition>
         <div className="flex flex-col gap-6">
           <h1 className="text-2xl font-bold tracking-tight">Profile</h1>
-          
+
           <Card className="glassmorphism">
             <CardHeader className="pb-2">
               <div className="flex flex-col md:flex-row md:items-center gap-4">
                 <Avatar className="h-16 w-16">
                   <AvatarImage src="/placeholder.svg" alt={user.name} />
-                  <AvatarFallback className="text-lg">{user.name.charAt(0)}</AvatarFallback>
+                  <AvatarFallback className="text-lg">
+                    {user.name.charAt(0)}
+                  </AvatarFallback>
                 </Avatar>
                 <div>
                   <CardTitle className="text-xl">{user.name}</CardTitle>

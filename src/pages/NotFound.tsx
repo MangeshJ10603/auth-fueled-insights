@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { PageTransition } from "@/components/ui/page-transition";
@@ -15,10 +14,7 @@ export default function NotFound() {
           <p className="text-muted-foreground">
             The page you are looking for doesn't exist or has been moved.
           </p>
-          <Button 
-            onClick={() => navigate("/")} 
-            className="mt-4"
-          >
+          <Button onClick={() => navigate("/")} className="mt-4">
             Return to Home
           </Button>
         </div>

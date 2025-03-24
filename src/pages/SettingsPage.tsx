@@ -1,7 +1,12 @@
-
 import { DashboardLayout } from "@/components/layout/dashboard-layout";
 import { PageTransition } from "@/components/ui/page-transition";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { useTheme } from "@/context/ThemeContext";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Switch } from "@/components/ui/switch";
@@ -26,14 +31,14 @@ export default function SettingsPage() {
       <PageTransition>
         <div className="flex flex-col gap-6">
           <h1 className="text-2xl font-bold tracking-tight">Settings</h1>
-          
+
           <Tabs defaultValue="appearance" className="w-full">
             <TabsList className="grid grid-cols-3 md:w-[400px]">
               <TabsTrigger value="appearance">Appearance</TabsTrigger>
               <TabsTrigger value="notifications">Notifications</TabsTrigger>
               <TabsTrigger value="account">Account</TabsTrigger>
             </TabsList>
-            
+
             <TabsContent value="appearance" className="mt-4">
               <Card className="glassmorphism">
                 <CardHeader>
@@ -65,11 +70,13 @@ export default function SettingsPage() {
                       Toggle between light and dark mode
                     </p>
                   </div>
-                  
+
                   <Separator />
-                  
+
                   <div className="space-y-4">
-                    <h3 className="text-md font-medium">Animation Preferences</h3>
+                    <h3 className="text-md font-medium">
+                      Animation Preferences
+                    </h3>
                     <div className="flex items-center justify-between">
                       <Label htmlFor="animations">Enable animations</Label>
                       <Switch id="animations" defaultChecked />
@@ -81,7 +88,7 @@ export default function SettingsPage() {
                 </CardContent>
               </Card>
             </TabsContent>
-            
+
             <TabsContent value="notifications" className="mt-4">
               <Card className="glassmorphism">
                 <CardHeader>
@@ -95,7 +102,9 @@ export default function SettingsPage() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
                         <BellRing className="h-5 w-5" />
-                        <Label htmlFor="push-notifications">Push Notifications</Label>
+                        <Label htmlFor="push-notifications">
+                          Push Notifications
+                        </Label>
                       </div>
                       <Switch id="push-notifications" defaultChecked />
                     </div>
@@ -103,14 +112,16 @@ export default function SettingsPage() {
                       Receive notifications even when you're not using the app
                     </p>
                   </div>
-                  
+
                   <Separator />
-                  
+
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
                         <Mail className="h-5 w-5" />
-                        <Label htmlFor="email-notifications">Email Notifications</Label>
+                        <Label htmlFor="email-notifications">
+                          Email Notifications
+                        </Label>
                       </div>
                       <Switch id="email-notifications" defaultChecked />
                     </div>
@@ -121,7 +132,7 @@ export default function SettingsPage() {
                 </CardContent>
               </Card>
             </TabsContent>
-            
+
             <TabsContent value="account" className="mt-4">
               <Card className="glassmorphism">
                 <CardHeader>
@@ -153,9 +164,9 @@ export default function SettingsPage() {
                       Change your preferred language
                     </p>
                   </div>
-                  
+
                   <Separator />
-                  
+
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">

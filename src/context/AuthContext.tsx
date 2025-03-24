@@ -1,8 +1,8 @@
 /* eslint-disable react-refresh/only-export-components */
 
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useState, useContext, useEffect } from "react";
 import { toast } from "sonner";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 interface AuthContextType {
   user: User | null;
@@ -19,25 +19,26 @@ interface User {
 }
 
 const mockUser = {
-  id: '1',
-  email: 'user@example.com',
-  name: 'John Doe',
+  id: "1",
+  email: "user@example.com",
+  name: "John Doe",
 };
 
 const isValidCredentials = (email: string, password: string) => {
-  return email === 'user@example.com' && password === 'password';
+  return email === "user@example.com" && password === "password";
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
     if (token) {
       setUser(mockUser);
     }
@@ -46,33 +47,34 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const login = async (email: string, password: string) => {
     setIsLoading(true);
-    
 
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     if (isValidCredentials(email, password)) {
-      const token = 'mock-jwt-token';
-      localStorage.setItem('token', token);
+      const token = "mock-jwt-token";
+      localStorage.setItem("token", token);
       setUser(mockUser);
       toast.success("Login successful!");
-      navigate('/dashboard');
+      navigate("/dashboard");
     } else {
       toast.error("Invalid email or password");
-      throw new Error('Invalid credentials');
+      throw new Error("Invalid credentials");
     }
-    
+
     setIsLoading(false);
   };
 
   const logout = () => {
-    localStorage.removeItem('token');
+    localStorage.removeItem("token");
     setUser(null);
     toast.info("You've been logged out");
-    navigate('/login');
+    navigate("/login");
   };
 
   return (
-    <AuthContext.Provider value={{ user, isAuthenticated: !!user, isLoading, login, logout }}>
+    <AuthContext.Provider
+      value={{ user, isAuthenticated: !!user, isLoading, login, logout }}
+    >
       {children}
     </AuthContext.Provider>
   );
@@ -81,7 +83,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
+    throw new Error("useAuth must be used within an AuthProvider");
   }
   return context;
 };

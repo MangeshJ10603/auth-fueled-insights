@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import {
   Table,
@@ -78,7 +77,7 @@ export function PostTable({ posts, isLoading, error }: PostTableProps) {
             <LoadingSpinner size="lg" />
           </div>
         )}
-        
+
         <div className="overflow-x-auto">
           <Table>
             <TableHeader>
@@ -91,8 +90,13 @@ export function PostTable({ posts, isLoading, error }: PostTableProps) {
             <TableBody>
               {currentPosts.length > 0 ? (
                 currentPosts.map((post) => (
-                  <TableRow key={post.id} className="transition-colors hover:bg-muted/50">
-                    <TableCell className="w-20 font-medium">{post.id}</TableCell>
+                  <TableRow
+                    key={post.id}
+                    className="transition-colors hover:bg-muted/50"
+                  >
+                    <TableCell className="w-20 font-medium">
+                      {post.id}
+                    </TableCell>
                     <TableCell className="font-medium">{post.title}</TableCell>
                     <TableCell className="truncate max-w-[200px] sm:max-w-[300px] md:max-w-[400px]">
                       {post.body}
@@ -102,7 +106,9 @@ export function PostTable({ posts, isLoading, error }: PostTableProps) {
               ) : (
                 <TableRow>
                   <TableCell colSpan={3} className="text-center py-6">
-                    {searchTerm ? "No posts match your search" : "No posts found"}
+                    {searchTerm
+                      ? "No posts match your search"
+                      : "No posts found"}
                   </TableCell>
                 </TableRow>
               )}

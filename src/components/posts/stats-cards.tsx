@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, UserCheck, Clock, BarChart2 } from "lucide-react";
 import { Post } from "@/types/post";
@@ -30,7 +29,7 @@ export function StatsCards({ posts }: StatsCardsProps) {
           </p>
         </CardContent>
       </Card>
-      
+
       <Card className="glassmorphism animate-fade-in border">
         <CardHeader className="flex flex-row items-center justify-between pb-2">
           <CardTitle className="text-sm font-medium">Unique Users</CardTitle>
@@ -45,10 +44,12 @@ export function StatsCards({ posts }: StatsCardsProps) {
           </p>
         </CardContent>
       </Card>
-      
+
       <Card className="glassmorphism animate-fade-in border">
         <CardHeader className="flex flex-row items-center justify-between pb-2">
-          <CardTitle className="text-sm font-medium">Avg. Title Length</CardTitle>
+          <CardTitle className="text-sm font-medium">
+            Avg. Title Length
+          </CardTitle>
           <BarChart2 className="h-4 w-4 text-muted-foreground" />
         </CardHeader>
         <CardContent>
@@ -58,10 +59,12 @@ export function StatsCards({ posts }: StatsCardsProps) {
           </p>
         </CardContent>
       </Card>
-      
+
       <Card className="glassmorphism animate-fade-in border">
         <CardHeader className="flex flex-row items-center justify-between pb-2">
-          <CardTitle className="text-sm font-medium">Avg. Body Length</CardTitle>
+          <CardTitle className="text-sm font-medium">
+            Avg. Body Length
+          </CardTitle>
           <Clock className="h-4 w-4 text-muted-foreground" />
         </CardHeader>
         <CardContent>

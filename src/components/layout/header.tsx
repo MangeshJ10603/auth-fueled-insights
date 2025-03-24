@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/AuthContext";
 import { useTheme } from "@/context/ThemeContext";
@@ -20,20 +19,26 @@ interface HeaderProps {
   className?: string;
 }
 
-export function Header({ toggleSidebar, isSidebarOpen, className }: HeaderProps) {
+export function Header({
+  toggleSidebar,
+  isSidebarOpen,
+  className,
+}: HeaderProps) {
   const { user, logout } = useAuth();
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <header className={cn(
-      "h-16 px-4 border-b flex items-center justify-between transition-all duration-300",
-      className
-    )}>
+    <header
+      className={cn(
+        "h-16 px-4 border-b flex items-center justify-between transition-all duration-300",
+        className
+      )}
+    >
       <div className="flex items-center gap-3">
-        <Button 
-          variant="ghost" 
-          size="icon" 
-          className="md:hidden" 
+        <Button
+          variant="ghost"
+          size="icon"
+          className="md:hidden"
           onClick={toggleSidebar}
           aria-label="Toggle sidebar"
         >
@@ -43,14 +48,16 @@ export function Header({ toggleSidebar, isSidebarOpen, className }: HeaderProps)
       </div>
 
       <div className="flex items-center gap-2">
-        <Button 
-          variant="ghost" 
-          size="icon" 
+        <Button
+          variant="ghost"
+          size="icon"
           onClick={toggleTheme}
           className="transition-all duration-300 ease-spring"
-          aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          aria-label={
+            theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+          }
         >
-          {theme === 'dark' ? (
+          {theme === "dark" ? (
             <Sun className="h-5 w-5 transition-transform duration-300 rotate-0" />
           ) : (
             <Moon className="h-5 w-5 transition-transform duration-300 rotate-0" />
@@ -63,14 +70,18 @@ export function Header({ toggleSidebar, isSidebarOpen, className }: HeaderProps)
               <Button variant="ghost" className="relative h-8 w-8 rounded-full">
                 <Avatar className="h-8 w-8 transition-all hover:scale-105">
                   <AvatarImage src="/placeholder.svg" alt={user.name} />
-                  <AvatarFallback className="text-xs">{user.name.charAt(0)}</AvatarFallback>
+                  <AvatarFallback className="text-xs">
+                    {user.name.charAt(0)}
+                  </AvatarFallback>
                 </Avatar>
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56" align="end" forceMount>
               <DropdownMenuLabel className="font-normal">
                 <div className="flex flex-col space-y-1">
-                  <p className="text-sm font-medium leading-none">{user.name}</p>
+                  <p className="text-sm font-medium leading-none">
+                    {user.name}
+                  </p>
                   <p className="text-xs leading-none text-muted-foreground">
                     {user.email}
                   </p>

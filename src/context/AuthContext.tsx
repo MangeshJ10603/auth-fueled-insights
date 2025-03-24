@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import { toast } from "sonner";
@@ -23,7 +24,6 @@ const mockUser = {
   name: 'John Doe',
 };
 
-// Mock credentials check
 const isValidCredentials = (email: string, password: string) => {
   return email === 'user@example.com' && password === 'password';
 };
@@ -36,7 +36,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check if user is already logged in
+    
     const token = localStorage.getItem('token');
     if (token) {
       setUser(mockUser);
@@ -47,7 +47,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const login = async (email: string, password: string) => {
     setIsLoading(true);
     
-    // Simulate API call delay
+
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     if (isValidCredentials(email, password)) {

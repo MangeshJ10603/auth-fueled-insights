@@ -1,69 +1,40 @@
-# Welcome to your Lovable project
+# Auth-Fueled Insights
 
-## Project info
+This project is a modern web application that leverages React (with TypeScript) and Vite. It is structured to help you build scalable and maintainable applications with a focus on authentication, protected routes, and modular code organization.
 
-**URL**: https://lovable.dev/projects/0a0bdecf-a42b-4468-817c-8d0b41fcbd91
+## Project Structure
 
-## How can I edit this code?
+- **src/**
+  - **components/**  
+    Contains reusable UI components and layout components.  
+    - `protected-route.tsx`: Provides route protection based on authentication status.  
+    - `providers.tsx`: Contains context providers for global state management.  
+    - Other subdirectories like `auth/`, `layout/`, `posts/`, and `ui/` contain components related to authentication, layouts, posts management, and UI-specific components.
+    
+- **context/**  
+  Holds React context objects that manage global state and shared logic across the application.
+  
+- **hooks/**  
+  Custom React hooks that encapsulate reusable stateful logic.
 
-There are several ways of editing your application.
+- **lib/**  
+  Utility libraries and helper functions that can be used across the project.
 
-**Use Lovable**
+- **pages/**  
+  Contains route-based components that represent full pages in your application.  
+  These components make use of the various contexts, hooks, and components to render complete views.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0a0bdecf-a42b-4468-817c-8d0b41fcbd91) and start prompting.
+- **types/**  
+  Contains TypeScript definitions and interfaces that ensure type safety throughout the codebase.
 
-Changes made via Lovable will be committed automatically to this repo.
+## Getting Started
 
-**Use your preferred IDE**
+1. **Install Dependencies**  
+   Run `npm install` or `bun install` if using Bun to install all project dependencies.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+2. **Development Server**  
+   Run `npm run dev` (or corresponding Bun command) to start the development server.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+3. **Building the Project**  
+   Run the build script as outlined in the [package.json](package.json) to create a production build.
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/0a0bdecf-a42b-4468-817c-8d0b41fcbd91) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
